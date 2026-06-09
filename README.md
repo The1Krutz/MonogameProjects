@@ -18,6 +18,10 @@ This repository is a holding area for my personal practice projects in MonoGame.
 
 - nez_pong - self-made Pong clone using Nez. Uses some of the Nez sample code as a reference, but no outside tutorial
 
+- hexapractice - Some hexagon stuff I never got too deep into
+
+- SteelTower - A tower defense game I also abandoned pretty quickly
+
 ## Assets
 
 - Demo assets lifted at random from google image search
