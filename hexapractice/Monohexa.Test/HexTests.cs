@@ -4,19 +4,24 @@
 // I've modified this from the original, but credit where it's due:
 // Generated code -- CC0 -- No Rights Reserved -- http://www.redblobgames.com/grids/hexagons/
 
+using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Monohexa.Test;
 
-public class HexTests {
+public class HexTests
+{
   [Fact]
-  public void TestHexConstructorFailsWhenGivenInvalidCoordinates() {
+  public void TestHexConstructorFailsWhenGivenInvalidCoordinates()
+  {
     Assert.Throws<ArgumentException>(() => new Hex(-1, -1, -1));
     Assert.Throws<ArgumentException>(() => new Hex(0, 0, -1));
   }
 
   [Fact]
-  public void TestHexEqualityTrueWhenEqual() {
+  public void TestHexEqualityTrueWhenEqual()
+  {
     Assert.Equal(new Hex(), new Hex(0, 0, 0));
     Assert.Equal(new Hex(1, -1, 0), new Hex(1, -1, 0));
 
@@ -25,7 +30,8 @@ public class HexTests {
   }
 
   [Fact]
-  public void TestHexEqualityFalseWhenNotEqual() {
+  public void TestHexEqualityFalseWhenNotEqual()
+  {
     Assert.NotEqual(new Hex(0, 0, 0), new Hex(1, 0, -1));
     Assert.NotEqual(new Hex(1, -1, 0), new Hex(1, 0, -1));
 
@@ -34,64 +40,77 @@ public class HexTests {
   }
 
   [Fact]
-  public void TestHexAddition() {
+  public void TestHexAddition()
+  {
     Assert.Equal(new Hex(4, -10, 6), new Hex(1, -3, 2) + (new Hex(3, -7, 4)));
   }
 
   [Fact]
-  public void TestHexSubtraction() {
+  public void TestHexSubtraction()
+  {
     Assert.Equal(new Hex(-2, 4, -2), new Hex(1, -3, 2) - (new Hex(3, -7, 4)));
   }
 
   [Fact]
-  public void TestHexScalarMultiplication() {
+  public void TestHexScalarMultiplication()
+  {
     Assert.Equal(new Hex(6, -14, 8), new Hex(3, -7, 4) * 2);
   }
 
   [Fact]
-  public void TestHexScalarDivision() {
+  public void TestHexScalarDivision()
+  {
     Assert.Equal(new Hex(3, -7, 4), new Hex(6, -14, 8) / 2);
   }
 
   [Fact]
-  public void TestHexRotateLeft() {
+  public void TestHexRotateLeft()
+  {
     Assert.Equal(new Hex(-2, -1, 3), new Hex(1, -3, 2).RotateLeft);
   }
 
   [Fact]
-  public void TestHexRotateRight() {
+  public void TestHexRotateRight()
+  {
     Assert.Equal(new Hex(3, -2, -1), new Hex(1, -3, 2).RotateRight);
   }
 
   [Fact]
-  public void TestHexDirection() {
+  public void TestHexDirection()
+  {
     Assert.Equal(new Hex(0, -1, 1), Hex.Direction(2));
   }
 
   [Fact]
-  public void TestHexNeighbor() {
+  public void TestHexNeighbor()
+  {
     Assert.Equal(new Hex(1, -3, 2), new Hex(1, -2, 1).Neighbor(2));
   }
 
   [Fact]
-  public void TestHexDiagonalNeighbor() {
+  public void TestHexDiagonalNeighbor()
+  {
     Assert.Equal(new Hex(-1, -1, 2), new Hex(1, -2, 1).DiagonalNeighbor(3));
   }
 
   [Fact]
-  public void TestHexLength() {
+  public void TestHexLength()
+  {
     Assert.Equal(7, new Hex(3, -7, 4).Length);
   }
 
   [Fact]
-  public void TestHexDistance() {
+  public void TestHexDistance()
+  {
     Assert.Equal(7, new Hex(3, -7, 4).Distance(new Hex(0, 0, 0)));
   }
 }
 
-public class FractionalHexTests {
+public class FractionalHexTests
+{
   [Fact]
-  public void TestHexRound() {
+  public void TestHexRound()
+  {
     FractionalHex a = new();
     FractionalHex b = new(1.0f, -1.0f);
     FractionalHex c = new(0.0f, -1.0f, 1.0f);
@@ -104,12 +123,14 @@ public class FractionalHexTests {
   }
 
   [Fact]
-  public void TestHexLerp() {
+  public void TestHexLerp()
+  {
     Assert.True(new Hex(5, -10, 5) == new FractionalHex(0.0f, 0.0f, 0.0f).HexLerp(new FractionalHex(10.0f, -20.0f, 10.0f), 0.5f).HexRound());
   }
 
   [Fact]
-  public void TestHexLineDraw() {
+  public void TestHexLineDraw()
+  {
     List<Hex> drawline = FractionalHex.HexLinedraw(new Hex(0, 0, 0), new Hex(1, -5, 4));
     List<Hex> expected = new() {
       new Hex(0, 0, 0),
@@ -124,9 +145,11 @@ public class FractionalHexTests {
   }
 }
 
-public class OffsetCoordTests {
+public class OffsetCoordTests
+{
   [Fact]
-  public void TestOffsetRoundTrip() {
+  public void TestOffsetRoundTrip()
+  {
     Hex a = new(3, 4, -7);
     OffsetCoord b = new(1, -3);
     Assert.Equal(a, OffsetCoord.QoffsetToCube(OffsetCoord.EVEN, OffsetCoord.QoffsetFromCube(OffsetCoord.EVEN, a)));
@@ -140,21 +163,25 @@ public class OffsetCoordTests {
   }
 
   [Fact]
-  public void TestOffsetFromCube() {
+  public void TestOffsetFromCube()
+  {
     Assert.Equal(new OffsetCoord(1, 3), OffsetCoord.QoffsetFromCube(OffsetCoord.EVEN, new Hex(1, 2, -3)));
     Assert.Equal(new OffsetCoord(1, 2), OffsetCoord.QoffsetFromCube(OffsetCoord.ODD, new Hex(1, 2, -3)));
   }
 
   [Fact]
-  public void TestOffsetToCube() {
+  public void TestOffsetToCube()
+  {
     Assert.Equal(new Hex(1, 2, -3), OffsetCoord.QoffsetToCube(OffsetCoord.EVEN, new OffsetCoord(1, 3)));
     Assert.Equal(new Hex(1, 2, -3), OffsetCoord.QoffsetToCube(OffsetCoord.ODD, new OffsetCoord(1, 2)));
   }
 }
 
-public class DoubledCoordTests {
+public class DoubledCoordTests
+{
   [Fact]
-  public void TestDoubledRoundtrip() {
+  public void TestDoubledRoundtrip()
+  {
     Hex a = new(3, 4, -7);
     DoubledCoord b = new(1, -3);
     Assert.Equal(a, DoubledCoord.QdoubledFromCube(a).QdoubledToCube());
@@ -164,21 +191,25 @@ public class DoubledCoordTests {
   }
 
   [Fact]
-  public void TestDoubledFromCube() {
+  public void TestDoubledFromCube()
+  {
     Assert.Equal(new DoubledCoord(1, 5), DoubledCoord.QdoubledFromCube(new Hex(1, 2, -3)));
     Assert.Equal(new DoubledCoord(4, 2), DoubledCoord.RdoubledFromCube(new Hex(1, 2, -3)));
   }
 
   [Fact]
-  public void TestDoubledToCube() {
+  public void TestDoubledToCube()
+  {
     Assert.Equal(new Hex(1, 2, -3), new DoubledCoord(1, 5).QdoubledToCube());
     Assert.Equal(new Hex(1, 2, -3), new DoubledCoord(4, 2).RdoubledToCube());
   }
 }
 
-public class LayoutTests {
+public class LayoutTests
+{
   [Fact]
-  public void TestLayout() {
+  public void TestLayout()
+  {
     Hex h = new(3, 4, -7);
     Layout flat = new(Layout.Flat, new Vector2(10.0f, 15.0f), new Vector2(35.0f, 71.0f));
     Assert.Equal(h, flat.PixelToHex(flat.HexToPixel(h)).HexRound());

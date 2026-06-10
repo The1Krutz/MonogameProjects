@@ -1,11 +1,3 @@
-build:
-	dotnet build
-clean:
-	rm -rf Monohexa/obj Monohexa/bin
-	rm -rf Monohexa.Test/obj Monohexa.Test/bin Monohexa.Test/TestResults
-	dotnet clean
-restore:
-	dotnet restore
 run:
 	dotnet run --project Monohexa
 run-watch:
@@ -13,6 +5,8 @@ run-watch:
 test:
 	dotnet test --collect:"XPlat Code Coverage" --logger html && \
   make coverage-report
+test-setup:
+	(cd Monohexa.Test && dotnet tool restore)
 test-watch:
 	dotnet watch --project Monohexa.Test test
 content:
@@ -21,3 +15,7 @@ coverage-report:
 	(cd Monohexa.Test && dotnet reportgenerator)
 open-coverage:
 	firefox Monohexa.Test/TestResults/coverage/index.html
+clean:
+	rm -rf Monohexa/obj Monohexa/bin
+	rm -rf Monohexa.Test/obj Monohexa.Test/bin Monohexa.Test/TestResults
+	dotnet clean
