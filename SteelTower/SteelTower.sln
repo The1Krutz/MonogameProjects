@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelTower", "SteelTower\SteelTower.csproj", "{4FF0F39E-FF5C-4B82-90CD-9EBCF1875915}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelTower.Game", "Game\Game.csproj", "{4FF0F39E-FF5C-4B82-90CD-9EBCF1875915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelTower.Test", "SteelTower.Test\SteelTower.Test.csproj", "{1F07B6EA-6B51-4DE4-B611-EF3DE61F1FBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteelTower.Test", "Test\Test.csproj", "{1F07B6EA-6B51-4DE4-B611-EF3DE61F1FBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
