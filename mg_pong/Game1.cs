@@ -4,8 +4,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace mg_pong {
-  public class Game1 : Game {
+namespace mg_pong
+{
+  public class Game1 : Game
+  {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private SpriteFont _kenneyBold;
@@ -27,7 +29,8 @@ namespace mg_pong {
     private int leftScore;
     private int rightScore;
 
-    public Game1() {
+    public Game1()
+    {
       _graphics = new GraphicsDeviceManager(this);
       Content.RootDirectory = "Content";
       IsMouseVisible = true;
@@ -35,7 +38,8 @@ namespace mg_pong {
       playableArea = new Rectangle(0, 50, 800, 550);
     }
 
-    protected override void Initialize() {
+    protected override void Initialize()
+    {
       // set window size
       _graphics.PreferredBackBufferHeight = playableArea.Height + 50;
       _graphics.PreferredBackBufferWidth = playableArea.Width;
@@ -68,12 +72,14 @@ namespace mg_pong {
       base.Initialize();
     }
 
-    protected override void LoadContent() {
+    protected override void LoadContent()
+    {
       _spriteBatch = new SpriteBatch(GraphicsDevice);
       _kenneyBold = Content.Load<SpriteFont>("KenneyBoldTTF");
     }
 
-    protected override void Update(GameTime gameTime) {
+    protected override void Update(GameTime gameTime)
+    {
       KeyboardState state = Keyboard.GetState();
 
       if (state.IsKeyDown(Keys.Escape))
@@ -85,39 +91,47 @@ namespace mg_pong {
       ball.Update(state, gameTime);
 
       // keep the ball in bounds
-      if (ball.BoundingBox.Bottom >= playableArea.Bottom) {
+      if (ball.BoundingBox.Bottom >= playableArea.Bottom)
+      {
         ball.BounceUp();
       }
-      if (ball.BoundingBox.Top <= playableArea.Top) {
+      if (ball.BoundingBox.Top <= playableArea.Top)
+      {
         ball.BounceDown();
       }
-      if (ball.BoundingBox.Left <= playableArea.Left) {
+      if (ball.BoundingBox.Left <= playableArea.Left)
+      {
         rightScore++;
         ball.BounceRight();
         ResetBall();
       }
-      if (ball.BoundingBox.Right >= playableArea.Right) {
+      if (ball.BoundingBox.Right >= playableArea.Right)
+      {
         leftScore++;
         ball.BounceLeft();
         ResetBall();
       }
 
       // handle bouncing it off paddles
-      if (ball.BoundingBox.Intersects(rightPaddle.BoundingBox)) {
+      if (ball.BoundingBox.Intersects(rightPaddle.BoundingBox))
+      {
         ball.BounceLeft();
       }
-      if (ball.BoundingBox.Intersects(leftPaddle.BoundingBox)) {
+      if (ball.BoundingBox.Intersects(leftPaddle.BoundingBox))
+      {
         ball.BounceRight();
       }
 
       base.Update(gameTime);
     }
 
-    private void ResetBall() {
+    private void ResetBall()
+    {
       ball.BoundingBox.Location = new Point(400, 300);
     }
 
-    protected override void Draw(GameTime gameTime) {
+    protected override void Draw(GameTime gameTime)
+    {
       GraphicsDevice.Clear(Color.Black);
 
       _spriteBatch.Begin();
@@ -131,7 +145,8 @@ namespace mg_pong {
       base.Draw(gameTime);
     }
 
-    protected override void UnloadContent() {
+    protected override void UnloadContent()
+    {
       Content.Unload();
       base.UnloadContent();
     }

@@ -20,11 +20,6 @@ namespace Demo4
       soundEffects = new List<SoundEffect>();
     }
 
-    protected override void Initialize()
-    {
-      base.Initialize();
-    }
-
     protected override void LoadContent()
     {
       _spriteBatch = new SpriteBatch(GraphicsDevice);

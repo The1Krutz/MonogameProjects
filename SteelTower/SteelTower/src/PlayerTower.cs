@@ -9,7 +9,8 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SteelTower;
 
-public class PlayerTower : Pawn {
+public class PlayerTower : Pawn
+{
   // actions handlers that should be called every frame the key is held down
   // ie: turning, forward motion
   private readonly Dictionary<Keys, Action> _continuousKeys = new(){
@@ -29,47 +30,60 @@ public class PlayerTower : Pawn {
 
   private readonly Health _health;
 
-  public PlayerTower() {
+  public PlayerTower()
+  {
     _health = new Health(OnHealthChanged, OnHealthDepleted, 1000);
   }
 
   // exposing just this instead of the whole Health object
-  public void TakeDamage(Damage incomingDamage) {
+  public void TakeDamage(Damage incomingDamage)
+  {
     _health.TakeDamage(incomingDamage);
   }
 
-  private void OnHealthDepleted() {
+  private void OnHealthDepleted()
+  {
     // @todo - this should trigger losing the game
     Console.WriteLine("health update: dead");
   }
 
-  private void OnHealthChanged(float newHealth) {
+  private void OnHealthChanged(float newHealth)
+  {
     // @todo - this should update whatever UI and probably trigger a visual effect
     Console.WriteLine("health update: {0} remaining", newHealth);
   }
 
-  public void Update() {
+  public void Update()
+  {
     KeyboardState keyboardState = Keyboard.GetState();
 
-    foreach (KeyValuePair<Keys, Action> handler in _continuousKeys) {
-      if (keyboardState.IsKeyDown(handler.Key)) {
+    foreach (KeyValuePair<Keys, Action> handler in _continuousKeys)
+    {
+      if (keyboardState.IsKeyDown(handler.Key))
+      {
         handler.Value();
       }
     }
 
-    foreach (KeyValuePair<Keys, Action> handler in _singlePressKeys) {
-      if (_singlePressIgnore.Contains(handler.Key)) {
-        if (keyboardState.IsKeyUp(handler.Key)) {
+    foreach (KeyValuePair<Keys, Action> handler in _singlePressKeys)
+    {
+      if (_singlePressIgnore.Contains(handler.Key))
+      {
+        if (keyboardState.IsKeyUp(handler.Key))
+        {
           _singlePressIgnore.Remove(handler.Key);
         }
-      } else if (keyboardState.IsKeyDown(handler.Key)) {
+      }
+      else if (keyboardState.IsKeyDown(handler.Key))
+      {
         _singlePressIgnore.Add(handler.Key);
         handler.Value();
       }
     }
   }
 
-  public void Draw(SpriteBatch spriteBatch) {
+  public void Draw(SpriteBatch spriteBatch)
+  {
     spriteBatch.Begin();
     spriteBatch.Draw(Sprite, Position, Color.White);
     spriteBatch.End();

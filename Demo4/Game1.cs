@@ -3,23 +3,23 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace Demo4 {
-  public class Game1 : Game {
+namespace Demo4
+{
+  public class Game1 : Game
+  {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     Song song;
 
-    public Game1() {
+    public Game1()
+    {
       _graphics = new GraphicsDeviceManager(this);
       Content.RootDirectory = "Content";
       IsMouseVisible = true;
     }
 
-    protected override void Initialize() {
-      base.Initialize();
-    }
-
-    protected override void LoadContent() {
+    protected override void LoadContent()
+    {
       _spriteBatch = new SpriteBatch(GraphicsDevice);
 
       song = Content.Load<Song>("sample_mp3");
@@ -29,26 +29,30 @@ namespace Demo4 {
       MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
     }
 
-    protected override void UnloadContent() {
+    protected override void UnloadContent()
+    {
       Content.Unload();
       base.UnloadContent();
     }
 
-    void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e) {
+    void MediaPlayer_MediaStateChanged(object sender, System.EventArgs e)
+    {
       // 0.0f is silent, 1.0f is full volume
       MediaPlayer.Volume -= 0.2f;
       MediaPlayer.Play(song);
     }
 
 
-    protected override void Update(GameTime gameTime) {
+    protected override void Update(GameTime gameTime)
+    {
       if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
         Exit();
 
       base.Update(gameTime);
     }
 
-    protected override void Draw(GameTime gameTime) {
+    protected override void Draw(GameTime gameTime)
+    {
       GraphicsDevice.Clear(Color.CornflowerBlue);
       base.Draw(gameTime);
     }

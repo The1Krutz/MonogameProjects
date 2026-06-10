@@ -1,9 +1,12 @@
 ﻿using System;
 
-namespace Demo3 {
-  public static class Program {
+namespace Demo3
+{
+  public static class Program
+  {
     [STAThread]
-    static void Main() {
+    static void Main()
+    {
 
       // keyboard input example
       //using (var game = new Game1())

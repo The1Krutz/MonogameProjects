@@ -1,73 +1,89 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Text;
 
 /**
- * Example for keyboard input 
+ * Example for keyboard input
  */
-namespace Demo3 {
-  public class Game1 : Game {
+namespace Demo3
+{
+  public class Game1 : Game
+  {
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
     Vector2 position;
     Texture2D texture;
     KeyboardState previousState;
 
-    public Game1() {
+    public Game1()
+    {
       graphics = new GraphicsDeviceManager(this);
       Content.RootDirectory = "Content";
       IsMouseVisible = true;
     }
 
-    protected override void Initialize() {
+    protected override void Initialize()
+    {
       base.Initialize();
-      position = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2 - 64, graphics.GraphicsDevice.Viewport.Height / 2 - 64);
+      position = new Vector2((graphics.GraphicsDevice.Viewport.Width / 2) - 64, (graphics.GraphicsDevice.Viewport.Height / 2) - 64);
       previousState = Keyboard.GetState();
     }
 
-    protected override void LoadContent() {
+    protected override void LoadContent()
+    {
       spriteBatch = new SpriteBatch(GraphicsDevice);
       texture = Content.Load<Texture2D>("potato");
     }
 
-    protected override void UnloadContent() {
+    protected override void UnloadContent()
+    {
       Content.Unload();
       base.UnloadContent();
     }
 
-    protected override void Update(GameTime gameTime) {
+    protected override void Update(GameTime gameTime)
+    {
       // poll for current keyboard state
       KeyboardState state = Keyboard.GetState();
 
       // exit if they hit escape
-      if (state.IsKeyDown(Keys.Escape)) {
+      if (state.IsKeyDown(Keys.Escape))
+      {
         Exit();
       }
 
       StringBuilder sb = new StringBuilder();
       sb.Append("Keys pressed: ");
 
-      if (state.GetPressedKeys().Length == 0) {
+      if (state.GetPressedKeys().Length == 0)
+      {
         sb.Append("none");
-      } else {
-        foreach (var key in state.GetPressedKeys()) {
+      }
+      else
+      {
+        foreach (var key in state.GetPressedKeys())
+        {
           sb.Append(key);
         }
       }
 
       System.Console.WriteLine(sb);
 
-      if (state.IsKeyDown(Keys.Right) && !previousState.IsKeyDown(Keys.Right)) {
+      if (state.IsKeyDown(Keys.Right) && !previousState.IsKeyDown(Keys.Right))
+      {
         position.X += 10;
       }
-      if (state.IsKeyDown(Keys.Left) && !previousState.IsKeyDown(Keys.Left)) {
+      if (state.IsKeyDown(Keys.Left) && !previousState.IsKeyDown(Keys.Left))
+      {
         position.X -= 10;
       }
-      if (state.IsKeyDown(Keys.Up)) {
+      if (state.IsKeyDown(Keys.Up))
+      {
         position.Y -= 10;
       }
-      if (state.IsKeyDown(Keys.Down)) {
+      if (state.IsKeyDown(Keys.Down))
+      {
         position.Y += 10;
       }
 
@@ -75,7 +91,8 @@ namespace Demo3 {
       previousState = state;
     }
 
-    protected override void Draw(GameTime gameTime) {
+    protected override void Draw(GameTime gameTime)
+    {
       GraphicsDevice.Clear(Color.CornflowerBlue);
 
       spriteBatch.Begin();

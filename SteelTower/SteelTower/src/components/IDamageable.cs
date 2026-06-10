@@ -3,49 +3,61 @@
 
 namespace SteelTower;
 
-public interface IDamageable {
+public interface IDamageable
+{
   void TakeDamage(Damage incoming);
   void TakeDamage(DamageOverTime incoming);
 }
 
-public enum DamageType {
-  Healing,
-  Normal,
-  ArmorPiercing,
-  Fire,
+public enum DamageType
+{
+  Healing = 0,
+  Normal = 1,
+  ArmorPiercing = 2,
+  Fire = 3,
 }
 
-public struct Damage {
-  public float Amount {
+public struct Damage
+{
+  public float Amount
+  {
     get; set;
   }
-  public DamageType Type {
+  public DamageType Type
+  {
     get; set;
   }
 
-  public Damage(float amount, DamageType type = DamageType.Normal) {
+  public Damage(float amount, DamageType type = DamageType.Normal)
+  {
     Amount = amount;
     Type = type;
   }
 
-  public static Damage operator *(Damage dmg, float delta) {
+  public static Damage operator *(Damage dmg, float delta)
+  {
     dmg.Amount *= delta;
     return dmg;
   }
 }
 
-public struct DamageOverTime {
-  public float Amount {
+public struct DamageOverTime
+{
+  public float Amount
+  {
     get; set;
   }
-  public DamageType Type {
+  public DamageType Type
+  {
     get; set;
   }
-  public float Duration {
+  public float Duration
+  {
     get; set;
   }
 
-  public DamageOverTime(float amount, float duration, DamageType type = DamageType.Normal) {
+  public DamageOverTime(float amount, float duration, DamageType type = DamageType.Normal)
+  {
     Amount = amount;
     Duration = duration;
     Type = type;

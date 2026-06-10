@@ -3,5 +3,4 @@
 
 namespace SteelTower;
 
-public class Enemy : Pawn {
-}
+public class Enemy : Pawn;
