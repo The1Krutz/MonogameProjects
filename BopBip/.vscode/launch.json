@@ -5,10 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C#: bopbip Debug",
+      "name": "C#: BopBip Debug",
       "type": "dotnet",
       "request": "launch",
-      "projectPath": "${workspaceFolder}/bopbip.csproj"
+      "projectPath": "${workspaceFolder}/BopBip.csproj"
     }
   ],
 }
