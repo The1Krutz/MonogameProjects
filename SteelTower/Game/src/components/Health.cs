@@ -35,16 +35,16 @@ public class Health : IDamageable
     _currentHealth = currentHealth;
   }
 
-  public void TakeDamage(Damage incomingDamage)
+  public void TakeDamage(Damage incoming)
   {
     // @todo - if you're going to do damage resistances by type, this is probably where it goes
-    switch (incomingDamage.Type)
+    switch (incoming.Type)
     {
       case DamageType.Healing:
-        _currentHealth += incomingDamage.Amount;
+        _currentHealth += incoming.Amount;
         break;
       default:
-        _currentHealth -= incomingDamage.Amount;
+        _currentHealth -= incoming.Amount;
         break;
     }
 
@@ -60,7 +60,7 @@ public class Health : IDamageable
     OnHealthChanged(_currentHealth);
   }
 
-  public void TakeDamage(DamageOverTime incomingDoT)
+  public void TakeDamage(DamageOverTime incoming)
   {
     // TODO: add the incoming dot to a list of dots to process every tick
   }
