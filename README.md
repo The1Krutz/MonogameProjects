@@ -31,5 +31,5 @@ This repository is a holding area for my personal practice projects in MonoGame.
 ## License
 
 - The included MIT license applies only to my own code.
-- Any assets will have their licenses included nearby.
+- Any assets will have their licenses specified nearby.
 - Nez has its own license

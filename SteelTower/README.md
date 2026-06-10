@@ -25,29 +25,24 @@ This will be a list of every third-party asset I use. In the year of our lord tw
 - Also made with [Nez](https://github.com/prime31/Nez)
 
 - Heroic Asset Series (credit [Aleksandr Makarov](https://www.patreon.com/iknowkingrabbit))
+  - [Creature Pack](https://iknowkingrabbit.itch.io/heroic-creature-pack) - Nothing yet, but probably enemy sprites eventually
 
-    - [Creature Pack](https://iknowkingrabbit.itch.io/heroic-creature-pack) - Nothing yet, but probably enemy sprites eventually
+  - [Overworld Pack](https://iknowkingrabbit.itch.io/heroic-overworld) - Nothing yet
 
-    - [Overworld Pack](https://iknowkingrabbit.itch.io/heroic-overworld) - Nothing yet
+  - [Building Pack](https://iknowkingrabbit.itch.io/heroic-building-pack) - The player tower
 
-    - [Building Pack](https://iknowkingrabbit.itch.io/heroic-building-pack) - The player tower
+  - [Icon Pack](https://iknowkingrabbit.itch.io/heroic-icon-pack) - Nothing yet
 
-    - [Icon Pack](https://iknowkingrabbit.itch.io/heroic-icon-pack) - Nothing yet
+  - License text:
 
-    - License text:
-
-        > The license for the material in this zip file is as follows. Here's the important bits:
-        >
-        > 1. You may not host the contents of this zip file in whole or in part on any publicly avaliable server, unless as part of a game or similar product.
-        >
-        > 2. If you use this material in a game or other product, please give attribution to Aleksandr Makarov in the credits.
-        >
-        > 3. You are granted the right to modify the artwork to suit your Product. Remix, transform, and build upon the material for any purpose, even commercially.
-        >
-        > 4. That's it! Use in any for profit / not for profit product, and give me a shoutout at @IknowKingRabbit or Aleksandr Makarov if you can.
+    > The license for the material in this zip file is as follows. Here's the important bits:
+    >
+    > 1. You may not host the contents of this zip file in whole or in part on any publicly avaliable server, unless as part of a game or similar product.
+    > 2. If you use this material in a game or other product, please give attribution to Aleksandr Makarov in the credits.
+    > 3. You are granted the right to modify the artwork to suit your Product. Remix, transform, and build upon the material for any purpose, even commercially.
+    > 4. That's it! Use in any for profit / not for profit product, and give me a shoutout at @IknowKingRabbit or Aleksandr Makarov if you can.
 
 - Player icon and UI assets are from [Kenney Game Assets All-in-1](https://kenney.itch.io/kenney-game-assets) pack (credit [Kenney](https://www.kenney.nl)), licensed under [Creative Commons Zero (CC0)](http://creativecommons.org/publicdomain/zero/1.0/)
-
 
 ## License
 
