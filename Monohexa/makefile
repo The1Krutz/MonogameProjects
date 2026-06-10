@@ -1,21 +1,21 @@
 run:
-	dotnet run --project Monohexa
+	dotnet run --project Game
 run-watch:
-	dotnet watch --project Monohexa run
+	dotnet watch --project Game run
 test:
 	dotnet test --collect:"XPlat Code Coverage" --logger html && \
   make coverage-report
 test-setup:
-	(cd Monohexa.Test && dotnet tool restore)
+	(cd Test && dotnet tool restore)
 test-watch:
-	dotnet watch --project Monohexa.Test test
+	dotnet watch --project Test test
 content:
-	(cd Monohexa && dotnet tool run mgcb-editor-linux Content/Content.mgcb)
+	(cd Game && dotnet tool run mgcb-editor-linux Content/Content.mgcb)
 coverage-report:
-	(cd Monohexa.Test && dotnet reportgenerator)
+	(cd Test && dotnet reportgenerator)
 open-coverage:
-	firefox Monohexa.Test/TestResults/coverage/index.html
+	firefox Test/TestResults/coverage/index.html
 clean:
-	rm -rf Monohexa/obj Monohexa/bin
-	rm -rf Monohexa.Test/obj Monohexa.Test/bin Monohexa.Test/TestResults
+	rm -rf Game/obj Game/bin
+	rm -rf Test/obj Test/bin Test/TestResults
 	dotnet clean

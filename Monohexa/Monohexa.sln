@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monohexa", "Monohexa\Monohexa.csproj", "{40950436-F22D-452F-953E-6B162655E836}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monohexa.Game", "Game\Game.csproj", "{40950436-F22D-452F-953E-6B162655E836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monohexa.Test", "Monohexa.Test\Monohexa.Test.csproj", "{25DCF5D4-50E5-4F0A-ACA1-125E9F6DEC16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monohexa.Test", "Test\Test.csproj", "{25DCF5D4-50E5-4F0A-ACA1-125E9F6DEC16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

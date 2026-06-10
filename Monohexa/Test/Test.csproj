@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Monohexa\Monohexa.csproj" />
+    <ProjectReference Include="..\Game\Game.csproj" />
   </ItemGroup>
 
 </Project>
