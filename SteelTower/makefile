@@ -1,11 +1,3 @@
-build:
-	dotnet build
-clean:
-	rm -rf SteelTower/obj SteelTower/bin
-	rm -rf SteelTower.Test/obj SteelTower.Test/bin SteelTower.Test/TestResults
-	dotnet clean
-restore:
-	dotnet restore
 run:
 	dotnet run --project SteelTower
 run-watch:
@@ -13,6 +5,8 @@ run-watch:
 test:
 	dotnet test --collect:"XPlat Code Coverage" --logger html && \
   make coverage-report
+test-setup:
+	(cd SteelTower.Test && dotnet tool restore)
 test-watch:
 	dotnet watch --project SteelTower.Test test
 content:
@@ -21,3 +15,7 @@ coverage-report:
 	(cd SteelTower.Test && dotnet reportgenerator)
 open-coverage:
 	firefox SteelTower.Test/TestResults/coverage/index.html
+clean:
+	rm -rf SteelTower/obj SteelTower/bin
+	rm -rf SteelTower.Test/obj SteelTower.Test/bin SteelTower.Test/TestResults
+	dotnet clean

@@ -27,3 +27,9 @@ This repository is a holding area for my personal practice projects in MonoGame.
 - Demo assets lifted at random from google image search
 
 - Other assets used from [Kenney Game Assets Bundle 1](https://kenney.itch.io/kenney-game-assets-1), a bundle I purchased through Itch.io. All assets in this bundle are licensed under [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/).
+
+## License
+
+- The included MIT license applies only to my own code.
+- Any assets will have their licenses included nearby.
+- Nez has its own license
