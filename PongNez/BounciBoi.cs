@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using Nez;
 using Nez.Sprites;
 
-namespace nez_pong;
+namespace PongNez;
 
 public class PongScene : Scene
 {

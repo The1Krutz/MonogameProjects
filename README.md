@@ -16,7 +16,7 @@ This repository is a holding area for my personal practice projects in MonoGame.
 
 - PongMono - self-made Pong clone in pure Monogame, not following any outside tutorial
 
-- nez_pong - self-made Pong clone using Nez. Uses some of the Nez sample code as a reference, but no outside tutorial
+- PongNez - self-made Pong clone using Nez. Uses some of the Nez sample code as a reference, but no outside tutorial
 
 - hexapractice - Some hexagon stuff I never got too deep into
 

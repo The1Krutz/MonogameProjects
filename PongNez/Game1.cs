@@ -1,6 +1,6 @@
 ﻿using Nez;
 
-namespace nez_pong;
+namespace PongNez;
 
 public class Game1 : Core
 {

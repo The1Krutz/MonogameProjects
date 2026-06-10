@@ -12,7 +12,7 @@
         "dotnet build Demo4/Demo4.csproj;",
         "dotnet build Monohexa/Monohexa.sln;",
         "dotnet build PongMono/PongMono.csproj;",
-        "dotnet build nez_pong/nez_pong.csproj;",
+        "dotnet build PongNez/PongNez.csproj;",
         "dotnet build SteelTower/SteelTower.sln;",
       ],
       "group": {
@@ -36,7 +36,7 @@
         "dotnet format Demo4/Demo4.csproj -v d;",
         "dotnet format Monohexa/Monohexa.sln -v d;",
         "dotnet format PongMono/PongMono.csproj -v d;",
-        "dotnet format nez_pong/nez_pong.csproj -v d;",
+        "dotnet format PongNez/PongNez.csproj -v d;",
         "dotnet format SteelTower/SteelTower.sln -v d;",
       ],
       "group": {
