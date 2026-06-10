@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace mg_pong
+namespace PongMono
 {
   public class Game1 : Game
   {

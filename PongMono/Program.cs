@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mg_pong
+namespace PongMono
 {
   public static class Program
   {
