@@ -1,27 +1,32 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Audio;
-using System.Collections.Generic;
 
-namespace Demo4 {
-  public class Game2 : Game {
+namespace Demo4
+{
+  public class Game2 : Game
+  {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private List<SoundEffect> soundEffects;
 
-    public Game2() {
+    public Game2()
+    {
       _graphics = new GraphicsDeviceManager(this);
       Content.RootDirectory = "Content";
       IsMouseVisible = true;
       soundEffects = new List<SoundEffect>();
     }
 
-    protected override void Initialize() {
+    protected override void Initialize()
+    {
       base.Initialize();
     }
 
-    protected override void LoadContent() {
+    protected override void LoadContent()
+    {
       _spriteBatch = new SpriteBatch(GraphicsDevice);
 
       soundEffects.Add(Content.Load<SoundEffect>("button-1"));
@@ -38,13 +43,15 @@ namespace Demo4 {
       instance.Play();
     }
 
-    protected override void UnloadContent() {
+    protected override void UnloadContent()
+    {
       Content.Unload();
       base.UnloadContent();
     }
 
 
-    protected override void Update(GameTime gameTime) {
+    protected override void Update(GameTime gameTime)
+    {
       if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
         Exit();
 
@@ -65,7 +72,8 @@ namespace Demo4 {
       base.Update(gameTime);
     }
 
-    protected override void Draw(GameTime gameTime) {
+    protected override void Draw(GameTime gameTime)
+    {
       GraphicsDevice.Clear(Color.CornflowerBlue);
       base.Draw(gameTime);
     }
