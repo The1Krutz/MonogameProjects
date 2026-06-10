@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build all",
+      "type": "shell",
+      "command": [
+        "dotnet build Demo1/Demo1.csproj;",
+        "dotnet build Demo2/Demo2.csproj;",
+        "dotnet build Demo3/Demo3.csproj;",
+        "dotnet build Demo4/Demo4.csproj;",
+        "dotnet build Monohexa/Monohexa.sln;",
+        "dotnet build mg_pong/mg_pong.csproj;",
+        "dotnet build nez_pong/nez_pong.csproj;",
+        "dotnet build SteelTower/SteelTower.sln;",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Format all",
+      "type": "shell",
+      "command": [
+        "dotnet format Demo1/Demo1.csproj -v d;",
+        "dotnet format Demo2/Demo2.csproj -v d;",
+        "dotnet format Demo3/Demo3.csproj -v d;",
+        "dotnet format Demo4/Demo4.csproj -v d;",
+        "dotnet format Monohexa/Monohexa.sln -v d;",
+        "dotnet format mg_pong/mg_pong.csproj -v d;",
+        "dotnet format nez_pong/nez_pong.csproj -v d;",
+        "dotnet format SteelTower/SteelTower.sln -v d;",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test all",
+      "type": "shell",
+      "command": [
+        "dotnet test Monohexa/Monohexa.sln;",
+        "dotnet test SteelTower/SteelTower.sln;",
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
