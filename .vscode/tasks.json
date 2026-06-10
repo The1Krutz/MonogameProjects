@@ -5,7 +5,7 @@
       "label": "Build all",
       "type": "shell",
       "command": [
-        "dotnet build bopbip/bopbip.csproj;",
+        "dotnet build BopBip/BopBip.csproj;",
         "dotnet build Demo1/Demo1.csproj;",
         "dotnet build Demo2/Demo2.csproj;",
         "dotnet build Demo3/Demo3.csproj;",
@@ -29,7 +29,7 @@
       "label": "Format all",
       "type": "shell",
       "command": [
-        "dotnet format bopbip/bopbip.csproj -v d;",
+        "dotnet format BopBip/BopBip.csproj -v d;",
         "dotnet format Demo1/Demo1.csproj -v d;",
         "dotnet format Demo2/Demo2.csproj -v d;",
         "dotnet format Demo3/Demo3.csproj -v d;",

@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace bopbip;
+namespace BopBip;
 
 public class Game1 : Game
 {
