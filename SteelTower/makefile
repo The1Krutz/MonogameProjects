@@ -8,7 +8,7 @@ test:
 test-setup:
 	(cd Test && dotnet tool restore)
 test-watch:
-	dotnet watch --project Test test
+	(cd Test && dotnet watch test)
 content:
 	(cd Game && dotnet tool run mgcb-editor-linux Content/Content.mgcb)
 coverage-report:
